@@ -1,0 +1,11 @@
+#  Use base image
+FROM node:alpine
+
+WORKDIR /app
+
+# Downoload and install dependisis
+COPY ./package.json ./
+RUN npm install
+COPY ./ ./
+# Tell what do image on start container
+CMD ["npm","run", "start"]
